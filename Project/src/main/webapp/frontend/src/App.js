@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Join from './components/Join';
 import MyCalendar from './components/MyCalendar';
+import Sidebar from './components/Sidebar';
 
 function App() {
   // const [id, setId] = useState();
@@ -45,16 +46,19 @@ function App() {
   // }
   return (
 
-    <div>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/join" element={<Join />} />
-        <Route path="/calendar" element={<MyCalendar />} />
-      </Routes>
+    <div style={{display: 'flex'}}>
+      <Sidebar></Sidebar>
+
+      <div style={{flex:1}}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/calendar" element={<MyCalendar />} />
+        </Routes>
 
 
 
-      {/* <div className="App">
+        {/* <div className="App">
 
         <h1>Login</h1>
         <h1>살려줘</h1>
@@ -66,6 +70,7 @@ function App() {
         <button onClick={tryLogin}>로그인 시도중</button>
 
       </div> */}
+      </div>
     </div>
   );
 }
